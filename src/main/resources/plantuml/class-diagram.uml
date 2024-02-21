@@ -1,0 +1,85 @@
+@startuml
+!theme mars
+class Documento {
+- id: Long
+- numero: String
+- sei: String
+- tipo: DocumentoTipo
+}
+class DocumentoTipo {
+- id: Long
+- descricao: String
+- documentos: List<Documento>
+}
+class Usuario {
+- id: Long
+- nome String
+- cpf String
+- enderecos List<Endereco>
+}
+
+class Endereco {
+- id: Long
+- logradouro: String
+- cidade: String
+- cep: String
+- interferencias: List<Interferencia>
+}
+
+class DocumentoEndereco {
+    - documentos: List<Documento>
+    - enderecos: List<Endereco>
+
+}
+
+class UsuarioEndereco {
+    - usuarios List<Usuario>
+    - enderecos: List<Endereco>
+
+}
+interface Interferencia {
+  - latitude: double;
+  - longitude: double;
+  - finalidades: List<Finalidade>
+}
+class Subterranea extends Interferencia {
+
+}
+
+class Superficial extends Interferencia {
+
+}
+interface Finalidade {
+
+}
+class FinalidadeRequerida extends Finalidade {
+
+}
+class FinalidadeAutorizada extends Finalidade {
+
+}
+
+class Processo {
+ - id: Long
+ - anexos: List<Anexo>
+ - documentos: List<Documento>
+
+}
+class Anexo {
+ - id: Long
+ - numero: String
+ - anexos: List<Anexo>
+ - processo: Processo
+
+}
+
+DocumentoEndereco -- "1" Endereco
+UsuarioEndereco -- "1" Usuario
+UsuarioEndereco -- "1" Endereco
+Endereco "1" -- "*" Interferencia
+Interferencia "1" -- "*" Finalidade: finalidades
+DocumentoTipo "1" -- "*" Documento
+Processo "1" -- "*" Documento
+Processo "1" -- "*" Anexo
+DocumentoEndereco -- "1" Documento
+@enduml

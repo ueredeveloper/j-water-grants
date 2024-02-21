@@ -1,0 +1,1 @@
+graalvm17-ce /path/to/java -jar target/j-test-0.0.1-SNAPSHOT.jar
