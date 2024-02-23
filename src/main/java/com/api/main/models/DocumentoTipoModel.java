@@ -36,6 +36,10 @@ public class DocumentoTipoModel implements Serializable {
     super();
   }
 
+  public DocumentoTipoModel(String descricao) {
+    this.descricao = descricao;
+  }
+
   public static long getSerialversionuid() {
     return serialVersionUID;
   }

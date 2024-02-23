@@ -2,14 +2,18 @@ package com.api.main.dto;
 
 import java.util.List;
 
+import com.api.main.models.DocumentoTipoModel;
+import com.api.main.models.EnderecoModel;
+import com.api.main.models.ProcessoModel;
+
 public class DocumentoDTO {
-  
-  Long id;
-  String numero;
-  String processo;
-  String sei;
-  DocumentoTipoDTO tipo;
-  List<EnderecoDTO> enderecos;
+
+  private Long id;
+  private String numero;
+  private String sei;
+  private DocumentoTipoModel tipo;
+  private ProcessoModel processo;
+  private List<EnderecoModel> enderecos;
 
   public Long getId() {
     return id;
@@ -27,14 +31,6 @@ public class DocumentoDTO {
     this.numero = numero;
   }
 
-  public String getProcesso() {
-    return processo;
-  }
-
-  public void setProcesso(String processo) {
-    this.processo = processo;
-  }
-
   public String getSei() {
     return sei;
   }
@@ -43,19 +39,27 @@ public class DocumentoDTO {
     this.sei = sei;
   }
 
-  public DocumentoTipoDTO getTipo() {
+  public DocumentoTipoModel getTipo() {
     return tipo;
   }
 
-  public void setTipo(DocumentoTipoDTO tipo) {
+  public void setTipo(DocumentoTipoModel tipo) {
     this.tipo = tipo;
   }
 
-  public List<EnderecoDTO> getEnderecos() {
+  public ProcessoModel getProcesso() {
+    return processo;
+  }
+
+  public void setProcesso(ProcessoModel processo) {
+    this.processo = processo;
+  }
+
+  public List<EnderecoModel> getEnderecos() {
     return enderecos;
   }
 
-  public void setEnderecos(List<EnderecoDTO> enderecos) {
+  public void setEnderecos(List<EnderecoModel> enderecos) {
     this.enderecos = enderecos;
   }
 

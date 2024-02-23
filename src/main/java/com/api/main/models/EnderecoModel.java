@@ -3,6 +3,8 @@ package com.api.main.models;
 import java.io.Serializable;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -25,17 +27,28 @@ public class EnderecoModel implements Serializable {
   private String cidade;
   private String cep;
 
+  @JsonIgnore
   @ManyToMany
   @JoinTable(name = "documento_endereco", joinColumns = @JoinColumn(name = "endereco_id"), inverseJoinColumns = @JoinColumn(name = "documento_id"))
   private List<DocumentoModel> documentos;
 
-
+  @JsonIgnore
   @ManyToMany
   @JoinTable(name = "usuario_endereco", joinColumns = @JoinColumn(name = "endereco_id"), inverseJoinColumns = @JoinColumn(name = "usuario_id"))
   private List<UsuarioModel> usuarios;
 
   public static long getSerialversionuid() {
     return serialVersionUID;
+  }
+
+  public EnderecoModel() {
+    super();
+  }
+  public EnderecoModel(String logradouro){
+    this.logradouro=logradouro;
+  }
+  public EnderecoModel(Long id){
+    this.id = id;
   }
 
   public Long getId() {

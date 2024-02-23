@@ -20,9 +20,9 @@ public class ProcessoModel implements Serializable {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  Long id;
+  private Long id;
   @Column(nullable = true, unique = false, length = 40)
-  String numero;
+  private String numero;
 
   @JsonIgnore
   @OneToMany(mappedBy = "processo")
@@ -34,6 +34,42 @@ public class ProcessoModel implements Serializable {
 
   public ProcessoModel() {
     super();
+  }
+
+  public ProcessoModel(String numero) {
+    this.numero = numero;
+  }
+
+  public Long getId() {
+    return id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
+  }
+
+  public String getNumero() {
+    return numero;
+  }
+
+  public void setNumero(String numero) {
+    this.numero = numero;
+  }
+
+  public List<AnexoModel> getAnexos() {
+    return anexos;
+  }
+
+  public void setAnexos(List<AnexoModel> anexos) {
+    this.anexos = anexos;
+  }
+
+  public List<DocumentoModel> getDocumentos() {
+    return documentos;
+  }
+
+  public void setDocumentos(List<DocumentoModel> documentos) {
+    this.documentos = documentos;
   }
 
 }

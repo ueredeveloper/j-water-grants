@@ -8,9 +8,7 @@ public class EnderecoDTO {
   private String logradouro;
   private String cidade;
   private String cep;
-
   private List<DocumentoDTO> documentos;
-
   private List<UsuarioDTO> usuarios;
 
   public Long getId() {

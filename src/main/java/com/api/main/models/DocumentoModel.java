@@ -26,17 +26,22 @@ public class DocumentoModel implements Serializable {
   private String numero;
 
   @Column(nullable = true, unique = false, length = 40)
-  private String processo;
-
-  @Column(nullable = true, unique = false, length = 40)
   private String sei;
 
   @ManyToOne
   @JoinColumn(name = "tipo")
   private DocumentoTipoModel tipo;
 
+  @ManyToOne
+  @JoinColumn(name = "processo")
+  private ProcessoModel processo;
+
   @ManyToMany(mappedBy = "documentos")
   private List<EnderecoModel> enderecos;
+
+  public static long getSerialversionuid() {
+    return serialVersionUID;
+  }
 
   public Long getId() {
     return id;
@@ -54,20 +59,36 @@ public class DocumentoModel implements Serializable {
     this.numero = numero;
   }
 
-  public String getProcesso() {
-    return processo;
-  }
-
-  public void setProcesso(String processo) {
-    this.processo = processo;
-  }
-
   public String getSei() {
     return sei;
   }
 
   public void setSei(String sei) {
     this.sei = sei;
+  }
+
+  public DocumentoTipoModel getTipo() {
+    return tipo;
+  }
+
+  public void setTipo(DocumentoTipoModel tipo) {
+    this.tipo = tipo;
+  }
+
+  public ProcessoModel getProcesso() {
+    return processo;
+  }
+
+  public void setProcesso(ProcessoModel processo) {
+    this.processo = processo;
+  }
+
+  public List<EnderecoModel> getEnderecos() {
+    return enderecos;
+  }
+
+  public void setEnderecos(List<EnderecoModel> enderecos) {
+    this.enderecos = enderecos;
   }
 
 }
