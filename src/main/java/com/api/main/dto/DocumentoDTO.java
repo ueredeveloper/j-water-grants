@@ -15,6 +15,7 @@ public class DocumentoDTO {
   private ProcessoModel processo;
   private List<EnderecoModel> enderecos;
 
+  
   public Long getId() {
     return id;
   }

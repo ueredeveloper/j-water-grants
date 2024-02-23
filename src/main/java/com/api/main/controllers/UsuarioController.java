@@ -25,8 +25,8 @@ public class UsuarioController {
 
   public UsuarioController(UsuarioService usuarioService){
     this.usuarioService  = usuarioService;
-    
   }
+  
   @PostMapping
   public ResponseEntity<Object> save(@RequestBody @Valid UsuarioModel usuarioModel){
     return ResponseEntity.status(HttpStatus.CREATED).body(usuarioService.save(usuarioModel));

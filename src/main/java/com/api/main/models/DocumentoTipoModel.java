@@ -36,6 +36,7 @@ public class DocumentoTipoModel implements Serializable {
     super();
   }
 
+  
   public DocumentoTipoModel(String descricao) {
     this.descricao = descricao;
   }

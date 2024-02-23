@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import jakarta.transaction.Transactional;
 
+
 @Service
 public class UsuarioService {
   final UsuarioRepository usuarioRepository;

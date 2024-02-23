@@ -50,6 +50,7 @@ public class UsuarioModel implements Serializable {
   @ManyToMany(mappedBy = "usuarios")
   private List<EnderecoModel> enderecos;
 
+  
   public static long getSerialversionuid() {
     return serialVersionUID;
   }

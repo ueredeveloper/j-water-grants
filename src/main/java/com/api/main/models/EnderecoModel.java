@@ -37,6 +37,7 @@ public class EnderecoModel implements Serializable {
   @JoinTable(name = "usuario_endereco", joinColumns = @JoinColumn(name = "endereco_id"), inverseJoinColumns = @JoinColumn(name = "usuario_id"))
   private List<UsuarioModel> usuarios;
 
+  
   public static long getSerialversionuid() {
     return serialVersionUID;
   }

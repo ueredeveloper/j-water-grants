@@ -13,6 +13,7 @@ public class ProcessoDTO {
   private List<AnexoModel> anexos = new ArrayList<>();
   private List<DocumentoModel> documentos = new ArrayList<>();
 
+  
   public Long getId() {
     return id;
   }

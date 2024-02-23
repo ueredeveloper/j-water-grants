@@ -37,6 +37,7 @@ public class DocumentoControlller {
     return ResponseEntity.status(HttpStatus.CREATED).body(documentoService.save(documentoModel));
   }
 
+  
   @GetMapping
   public ResponseEntity<List<DocumentoModel>> listAll() {
     return ResponseEntity.status(HttpStatus.CREATED).body(documentoService.findAll());

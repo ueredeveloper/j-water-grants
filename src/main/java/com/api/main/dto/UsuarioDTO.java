@@ -26,6 +26,7 @@ public class UsuarioDTO {
 
   private List<EnderecoDTO> enderecos;
 
+  
   public Long getId() {
     return id;
   }

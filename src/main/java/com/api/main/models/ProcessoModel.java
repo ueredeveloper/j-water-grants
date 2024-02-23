@@ -36,6 +36,7 @@ public class ProcessoModel implements Serializable {
     super();
   }
 
+  
   public ProcessoModel(String numero) {
     this.numero = numero;
   }

@@ -29,6 +29,7 @@ public class EnderecoController {
     this.enderecoService = enderecoService;
   }
 
+  
   @PostMapping
   public ResponseEntity<Object> save(@RequestBody @Valid EnderecoModel enderecoModel) {
     return ResponseEntity.status(HttpStatus.CREATED).body(enderecoService.save(enderecoModel));

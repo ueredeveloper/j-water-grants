@@ -11,6 +11,7 @@ public class EnderecoDTO {
   private List<DocumentoDTO> documentos;
   private List<UsuarioDTO> usuarios;
 
+  
   public Long getId() {
     return id;
   }

@@ -1,12 +1,10 @@
 package com.api.main;
 
 import com.api.main.models.AnexoModel;
-import com.api.main.models.DocumentoModel;
 import com.api.main.models.DocumentoTipoModel;
 import com.api.main.models.EnderecoModel;
 import com.api.main.models.ProcessoModel;
 import com.api.main.repositories.AnexoRepository;
-import com.api.main.repositories.DocumentoRepository;
 import com.api.main.repositories.DocumentoTipoRepository;
 import com.api.main.repositories.EnderecoRepository;
 import com.api.main.repositories.ProcessoRepository;
@@ -77,4 +75,5 @@ public class Main {
     };
   }
 
+  
 }
